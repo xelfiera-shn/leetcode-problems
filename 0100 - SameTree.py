@@ -36,7 +36,7 @@ def CompareNodes(node1, node2):
         
         return True
     
-# Another Solution I implemented.
+# Another Solution I have implemented.
 class Solution(object):
     def isSameTree(self, p, q):
         if not p and not q:
