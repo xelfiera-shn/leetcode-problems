@@ -15,7 +15,9 @@ class Solution(object):
                 # Formula: (x,y) -> (y, n-1-x) where n is matrix size
                 newX = -currentY + len(matrix) - 1
                 newY = currentX
+
                 matrix[newY][newX], tempValue = tempValue, matrix[newY][newX]
+
                 currentX = newX
                 currentY = newY
 
