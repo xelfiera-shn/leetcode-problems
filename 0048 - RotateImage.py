@@ -12,7 +12,7 @@ class Solution(object):
             tempValue = matrix[currentY][currentX]
             for iteration in range(4):
                 # Calculate new position after 90-degree clockwise rotation
-                # Formula: (x,y) -> (y, n-1-x) where n is matrix size
+                # Formula: (x,y) -> (n-1-y, x) where n is matrix size
                 newX = -currentY + len(matrix) - 1
                 newY = currentX
 
