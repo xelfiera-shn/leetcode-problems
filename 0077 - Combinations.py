@@ -9,10 +9,10 @@ class Solution(object):
 def GenerateCombinations(combinations, candidate, index, n, k):
     if len(candidate) == k:
         combinations.append(candidate)
-        print(candidate)
+        return
 
     for i in range(index, n):
         candidate += [i + 1]
-        GenerateCombinations(combinations, candidate, i + 1, n, k)
+        GenerateCombinations(combinations, candidate.copy(), i + 1, n, k)
 
-Solution.combine(4, 2)
+print(Solution.combine(4, 2))
