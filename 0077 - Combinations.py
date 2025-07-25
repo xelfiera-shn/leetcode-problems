@@ -20,12 +20,12 @@ def GenerateCombinations(combinations, candidate, index, n, k):
 class Solution:
     @staticmethod
     def combine(n, k):
-        results = []
+        result = []
         candidate = []
 
         def backtrack(start):
             if len(candidate) == k:
-                results.append(candidate[ : ])
+                result.append(candidate[ : ])
                 return
             
             for num in range(start, n + 1):
@@ -34,7 +34,7 @@ class Solution:
                 candidate.pop()
 
         backtrack(1)
-        return results
+        return result
 
 # Another solution
 from itertools import combinations
