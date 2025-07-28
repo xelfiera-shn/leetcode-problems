@@ -24,7 +24,6 @@ class Solution(object):
     def uniquePathsWithObstacles(obstacleGrid):
         rowCount = len(obstacleGrid)
         columnCount = len(obstacleGrid[0])
-        totalMoveCount = rowCount + columnCount - 2
 
         uniquePathCount = [0]
         def move(currentX, currentY):
