@@ -17,3 +17,27 @@ class Solution(object):
                 if y > 0: cellValidPathCounts[y][x] += cellValidPathCounts[y - 1][x]
 
         return cellValidPathCounts[-1][-1]
+    
+# Backtracking solution but time limit exceeded
+class Solution(object):
+    @staticmethod
+    def uniquePathsWithObstacles(obstacleGrid):
+        rowCount = len(obstacleGrid)
+        columnCount = len(obstacleGrid[0])
+        totalMoveCount = rowCount + columnCount - 2
+
+        uniquePathCount = [0]
+        def move(currentX, currentY):
+            if obstacleGrid[currentY][currentX] == 1: return
+            
+            if currentY == rowCount - 1 and currentX == columnCount - 1:
+                uniquePathCount[0] += 1
+                return
+
+            if currentX + 1 < columnCount: move(currentX + 1, currentY)
+
+            if currentY + 1 < rowCount: move(currentX, currentY + 1)
+
+        move(0, 0)
+
+        return uniquePathCount[0]
