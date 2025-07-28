@@ -25,12 +25,12 @@ class Solution(object):
         rowCount = len(obstacleGrid)
         columnCount = len(obstacleGrid[0])
 
-        uniquePathCount = [0]
+        validPathCount = [0]
         def move(currentX, currentY):
             if obstacleGrid[currentY][currentX] == 1: return
             
             if currentY == rowCount - 1 and currentX == columnCount - 1:
-                uniquePathCount[0] += 1
+                validPathCount[0] += 1
                 return
 
             if currentX + 1 < columnCount: move(currentX + 1, currentY)
@@ -39,4 +39,4 @@ class Solution(object):
 
         move(0, 0)
 
-        return uniquePathCount[0]
+        return validPathCount[0]
