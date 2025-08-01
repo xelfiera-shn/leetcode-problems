@@ -1,8 +1,7 @@
 class Solution(object):
     @staticmethod
     def convert(s, numRows):
-        if numRows == 1:
-            return s
+        if numRows == 1: return s
 
         patternLenght = 2 * numRows - 2
         numColumns = int(len(s) / patternLenght) * (numRows - 1)
