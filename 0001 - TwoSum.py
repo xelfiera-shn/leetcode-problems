@@ -3,7 +3,6 @@ class Solution:
     def twoSum(nums, target):
         diffDict = {}
         for i, number in enumerate(nums):
-
             if number in diffDict:
                 return [diffDict[number], i]
 
