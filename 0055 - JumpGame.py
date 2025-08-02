@@ -17,9 +17,9 @@ class Solution(object):
         return True if memory[0] == 1 else False
 
 # Backtrack - Recursive (Time limit exceeded)
-class Solution1(object):
+class Solution(object):
     @staticmethod
-    def canJump2(nums):
+    def canJump(nums):
         def jump(index):
             if index == len(nums) - 1: return True
             if nums[index] == 0: return False
@@ -30,3 +30,20 @@ class Solution1(object):
             return False
         
         return jump(0)
+    
+# Lineer solution on the web, i like it
+class Solution(object):
+    @staticmethod
+    def canJump(nums):
+        currentIndex = 0
+        maxReachableIndex = 0
+
+        while currentIndex <= maxReachableIndex and currentIndex < len(nums):
+            maxReachableIndex = max(maxReachableIndex, currentIndex + nums[currentIndex])
+
+            if maxReachableIndex >= len(nums) - 1:
+                return True
+
+            currentIndex += 1
+
+        return False
