@@ -28,8 +28,6 @@ class Solution(object):
         generatePermutations(nums, [])
 
         return permutations
-    
-print(Solution.permuteUnique([0, 4, 1, 1]))
 
 # The solution where performance doesn't matter
 class Solution(object):
