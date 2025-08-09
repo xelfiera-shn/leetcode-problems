@@ -24,4 +24,4 @@ class Solution(object):
 class Solution(object):
     @staticmethod
     def isPalindrome(x):
-        return str(x) == str(x)[::-1]
+        return str(x) == str(x)[ : : -1]
