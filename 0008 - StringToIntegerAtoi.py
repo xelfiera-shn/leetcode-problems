@@ -7,7 +7,7 @@ class Solution(object):
         if len(s) > 0:
             if s[0] == '-' or s[0] == '+':
                 sign = -1 if s[0] == '-' else 1
-                s = s[1 :]
+                s = s[1 : ]
 
         else: return 0
 
