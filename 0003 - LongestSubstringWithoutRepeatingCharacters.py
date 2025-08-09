@@ -7,7 +7,7 @@ class Solution(object):
             if char in substring:
                 longestSubstring = substring if len(substring) > len(longestSubstring) else longestSubstring
                 duplicateIndex = substring.index(char)
-                substring = substring[duplicateIndex:]
+                substring = substring[duplicateIndex : ]
                 substring.pop(0)  # Remove the first duplicate char.
 
             substring.append(char)
