@@ -42,4 +42,4 @@ from itertools import combinations
 class Solution:
     @staticmethod
     def combine(n, k):
-        return (list(combinations(range(1,n+1), k)))
+        return (list(combinations(range(1, n + 1), k)))
