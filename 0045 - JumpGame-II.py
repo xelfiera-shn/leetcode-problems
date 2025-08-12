@@ -18,3 +18,19 @@ class Solution(object):
             currentIndex += 1
 
         return 0
+
+# Another solution
+class Solution(object):
+    @staticmethod
+    def jump(nums):
+        jumpCount = 0
+        currentReachableIndex = 0
+        maxReachableIndex = 0
+
+        for i in range(len(nums) - 1):
+            maxReachableIndex = max(maxReachableIndex, i + nums[i])
+            if i == currentReachableIndex:
+                jumpCount += 1
+                currentReachableIndex = maxReachableIndex
+
+        return jumpCount
