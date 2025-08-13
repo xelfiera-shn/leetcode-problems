@@ -12,7 +12,6 @@ class Solution(object):
 
         x, y = 0, 0
         for i in range(len(s)):
-            print(y, x)
             matrix[y][x] = s[i]
 
             if numRows > (i + 1) % patternLenght != 0:
