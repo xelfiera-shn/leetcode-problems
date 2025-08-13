@@ -2,12 +2,12 @@
 class Solution(object):
     @staticmethod
     def removeElement(nums, val):
-        i = 0
-        while i != len(nums):
-            if nums[i] == val:
-                nums.pop(i)
+        index = 0
+        while index != len(nums):
+            if nums[index] == val:
+                nums.pop(index)
                 continue
 
-            i += 1
+            index += 1
             
         return len(nums)
