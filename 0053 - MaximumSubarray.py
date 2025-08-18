@@ -1,3 +1,8 @@
+class Solution(object):
+    @staticmethod
+    def maxSubArray(nums):
+        pass
+
 # Time limit exceeded solution
 class Solution(object):
     @staticmethod
