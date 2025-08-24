@@ -17,3 +17,23 @@ class Solution(object):
         for column in markedColumns:
             for row in range(len(matrix)):
                 matrix[row][column] = 0
+
+# Another solution on the LeetCode.
+class Solution(object):
+    @staticmethod
+    def setZeroes(matrix):
+        markedColumns = set()
+
+        for r, row in enumerate(matrix):
+            isZeroFound = False
+            for c, column in enumerate(row):
+                if column == 0:
+                    isZeroFound = True
+                    markedColumns.add(c)
+
+            if isZeroFound:
+                matrix[r] = [0] * len(row)
+
+        for r, row in enumerate(matrix):
+            for c in markedColumns:
+                matrix[r][c] = 0
