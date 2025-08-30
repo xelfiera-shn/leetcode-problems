@@ -4,8 +4,7 @@ class Solution(object):
         rotations = ['RIGHT', 'DOWN', 'LEFT', 'UP']
         spiralMatrix = [[0 for _ in range(n)] for _ in range(n)]
 
-        xIndex = 0
-        yIndex = 0
+        xIndex, yIndex = 0, 0
         currentRotationIndex = 0
         currentValue = 1
         spiralMatrix[0][0] = 1
