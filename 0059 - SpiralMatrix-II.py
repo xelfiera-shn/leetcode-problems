@@ -51,3 +51,20 @@ class Solution(object):
                     currentRotationIndex %= len(rotations)
 
         return spiralMatrix
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def generateMatrix(n):
+        spiralMatrix = [[0] * n for _ in range(n)]
+        
+        x, y, dx, dy = 0, 0, 1, 0
+        for i in range(n * n):
+            spiralMatrix[y][x] = i + 1
+            if spiralMatrix[(y + dy) % n][(x + dx) % n]:
+                dy, dx = dx, -dy
+            
+            x += dx
+            y += dy
+
+        return spiralMatrix
