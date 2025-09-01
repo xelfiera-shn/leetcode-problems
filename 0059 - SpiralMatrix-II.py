@@ -68,12 +68,12 @@ class Solution(object):
 
         return spiralMatrix
     
-# Another solution too
+# Another solution
 class Solution(object):
     @staticmethod
     def generateMatrix(self, n):
         spiralMatrix = [[n * n]]
-        
+
         while spiralMatrix[0][0] > 1:
             spiralMatrix = [range(spiralMatrix[0][0] - len(spiralMatrix), spiralMatrix[0][0])] + zip(* spiralMatrix[ : : -1])
         
