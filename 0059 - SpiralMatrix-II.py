@@ -75,6 +75,6 @@ class Solution(object):
         spiralMatrix = [[n * n]]
 
         while spiralMatrix[0][0] > 1:
-            spiralMatrix = [range(spiralMatrix[0][0] - len(spiralMatrix), spiralMatrix[0][0])] + zip(* spiralMatrix[ : : -1])
+            spiralMatrix = [range(spiralMatrix[0][0] - len(spiralMatrix), spiralMatrix[0][0])] + zip( * spiralMatrix[ : : -1])
         
         return spiralMatrix * (n > 0)
