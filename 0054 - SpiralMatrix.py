@@ -18,3 +18,9 @@ class Solution(object):
             y += dy
 
         return orderList
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def spiralOrder(self, matrix):
+        return matrix and list(matrix.pop(0)) + self.spiralOrder(zip( * matrix)[ : : -1])
