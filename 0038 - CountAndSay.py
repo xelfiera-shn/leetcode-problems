@@ -22,3 +22,29 @@ class Solution(object):
             runLengthEncodes.append(currentMember)
 
         return runLengthEncodes[-1]
+    
+# Another solution (recursive)
+class Solution(object):
+    @staticmethod
+    def countAndSay(n):
+        def buildMember(previousMember):
+            currentMember = ''
+            previousMember += '#'
+            previousCharCount = 1
+
+            for i in range(len(previousMember) - 1):
+                if previousMember[i] == previousMember[i + 1]:
+                    previousCharCount += 1
+                    continue
+
+                else:
+                    currentMember += str(previousCharCount) + previousMember[i]
+                    previousCharCount = 1
+
+            return currentMember
+        
+        member = '1'
+        for i in range(n - 1):
+            member = buildMember(member)
+
+        return member
