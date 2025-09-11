@@ -5,7 +5,6 @@ class Solution(object):
 
         for i in range(1, n):
             previousMember = runLengthEncodes[i - 1]
-
             index = 0
             currentMember = ''
             while index < len(previousMember):
@@ -31,7 +30,6 @@ class Solution(object):
             currentMember = ''
             previousMember += '#'
             previousCharCount = 1
-
             for i in range(len(previousMember) - 1):
                 if previousMember[i] == previousMember[i + 1]:
                     previousCharCount += 1
