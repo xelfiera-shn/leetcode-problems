@@ -55,3 +55,15 @@ class Solution:
             dpMatrix[0][i] = max(dpMatrix[0][i - 1], dpMatrix[1][i])
  
         return dpMatrix[0][-1]
+    
+# Another solution
+class Solution(object):
+    def maxSubArray(self, nums):
+        maxSoFar = nums[0]
+        maxCurrent = nums[0]
+
+        for i in range(1,len(nums)):
+            maxCurrent = max(nums[i], maxCurrent + nums[i])
+            maxSoFar = max(maxSoFar, maxCurrent)
+
+        return maxSoFar
