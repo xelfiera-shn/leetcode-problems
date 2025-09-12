@@ -43,3 +43,15 @@ class Solution(object):
                 yIndex += 1
 
         return maxValue
+    
+# Another solution (Dynamic Programming - Tabulation)
+class Solution:
+    def maxSubArray(self, nums):
+        dpMatrix = [[0] * len(nums) for _ in range(2)]
+
+        dpMatrix[0][0], dpMatrix[1][0] = nums[0], nums[0]
+        for i in range(1, len(nums)):
+            dpMatrix[1][i] = max(nums[i], nums[i] + dpMatrix[1][i - 1])
+            dpMatrix[0][i] = max(dpMatrix[0][i - 1], dpMatrix[1][i])
+ 
+        return dpMatrix[0][-1]
