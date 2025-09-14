@@ -6,5 +6,20 @@ class ListNode(object):
 class Solution(object):
     @staticmethod
     def swapPairs(head):
-        pass
-    
+        def processNode(node):
+            if node.next == None:
+                return node
+            
+            previousNode = node
+            currentNode = node.next
+            nextNode = node.next.next
+
+            if nextNode != None:
+                nextNode = processNode(nextNode)
+
+            previousNode.next = nextNode
+            currentNode.next = previousNode
+
+            return currentNode
+        
+        return processNode(head) if head else head
