@@ -23,3 +23,16 @@ class Solution(object):
             return currentNode
         
         return processNode(head) if head else head
+    
+# Another solution
+class Solution(object):
+    def swapPairs(self, head):
+        previousNode, previousNode.next = self, head
+
+        while previousNode.next and previousNode.next.next:
+            currentNode = previousNode.next
+            nextNode = currentNode.next
+            previousNode.next, nextNode.next, currentNode.next = nextNode, currentNode, nextNode.next
+            previousNode = currentNode
+            
+        return self.next
