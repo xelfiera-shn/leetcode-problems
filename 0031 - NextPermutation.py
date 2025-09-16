@@ -8,11 +8,9 @@ class Solution(object):
         while leftIndex >= 0:
             if nums[rightIndex] > nums[leftIndex]:
 
-                # 2, 3, 1 --> 3, 2, 1 --> 3, 1, 2
                 nums[leftIndex], nums[rightIndex] = nums[rightIndex], nums[leftIndex]
-                nums[rightIndex : ] = sorted(nums[rightIndex : ])
+                nums[leftIndex + 1 : ] = sorted(nums[leftIndex + 1 : ])
 
-                print(nums)
                 checker = True
                 break
 
@@ -22,5 +20,3 @@ class Solution(object):
                 rightIndex = len(nums) - 1
 
         if not checker: nums.sort()
-
-print(Solution.nextPermutation([2, 3, 1]))
