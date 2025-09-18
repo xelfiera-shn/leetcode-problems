@@ -70,6 +70,7 @@ class Solution(object):
                     visitedDiagonals.add(difference)
                     visitedAntidiagonals.add(sum)
                     state[row][column] = 'Q'
+                    
                     backtrack(row + 1)
 
                     visitedColumns.remove(column)
