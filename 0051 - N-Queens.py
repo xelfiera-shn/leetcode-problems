@@ -44,3 +44,38 @@ class Solution(object):
         placeQueen(queenPositions, [], 0)
 
         return results
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def solveNQueens(n):
+        state = [['.'] * n for _ in range(n)]
+        results = []
+
+        visitedColumns = set()
+        visitedDiagonals = set()
+        visitedAntidiagonals = set()
+
+        def backtrack(row):
+            if row == n:
+                results.append([''.join(row) for row in state])
+                return
+            
+            for column in range(n):
+                difference = row - column
+                sum = row + column
+                
+                if not (column in visitedColumns or difference in visitedDiagonals or sum in visitedAntidiagonals):
+                    visitedColumns.add(column)
+                    visitedDiagonals.add(difference)
+                    visitedAntidiagonals.add(sum)
+                    state[row][column] = 'Q'
+                    backtrack(row + 1)
+
+                    visitedColumns.remove(column)
+                    visitedDiagonals.remove(difference)
+                    visitedAntidiagonals.remove(sum)
+                    state[row][column] = '.'
+
+        backtrack(0)
+        return results
