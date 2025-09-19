@@ -28,7 +28,7 @@ class Solution(object):
     @staticmethod
     def combinationSum(candidates, target):
         results = []
-        # candidates.sort()
+        candidates.sort()
 
         def calculateCombination(startIndex, combination, sum):
             for index in range(startIndex, len(candidates)):
@@ -36,9 +36,12 @@ class Solution(object):
                 newCombination = combination[ : : ]
                 newCombination.append(candidates[index])
 
+                if newSum > target:
+                    break
+
                 if newSum == target:
                     results.append(newCombination)
-                    # break
+                    break
 
                 elif newSum < target:
                     calculateCombination(index, newCombination[ : : ], newSum)
