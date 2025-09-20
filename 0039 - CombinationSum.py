@@ -7,7 +7,7 @@ class Solution(object):
         def calculateCombination(combination, sum):
             for candidate in candidates:
                 newSum = sum + candidate
-                newCombination = combination[ : : ]
+                newCombination = combination[ : ]
                 newCombination.append(candidate)
                 newCombination.sort()
 
@@ -18,7 +18,7 @@ class Solution(object):
                     break
 
                 elif newSum < target:
-                    calculateCombination(newCombination[ : : ], newSum)
+                    calculateCombination(newCombination[ : ], newSum)
 
         calculateCombination([], 0)
         return results
@@ -33,7 +33,7 @@ class Solution(object):
         def calculateCombination(startIndex, combination, sum):
             for index in range(startIndex, len(candidates)):
                 newSum = sum + candidates[index]
-                newCombination = combination[ : : ]
+                newCombination = combination[ : ]
                 newCombination.append(candidates[index])
 
                 if newSum > target:
@@ -44,7 +44,7 @@ class Solution(object):
                     break
 
                 elif newSum < target:
-                    calculateCombination(index, newCombination[ : : ], newSum)
+                    calculateCombination(index, newCombination[ : ], newSum)
 
         calculateCombination(0, [], 0)
         return results
