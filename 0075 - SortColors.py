@@ -13,3 +13,9 @@ class Solution(object):
     @staticmethod
     def sortColors(nums):
         nums.sort()
+
+# Another solution (Dutch National Flag)
+class Solution(object):
+    @staticmethod
+    def sortColors(nums):
+        pass
