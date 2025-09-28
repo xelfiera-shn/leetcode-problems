@@ -6,4 +6,27 @@ class ListNode(object):
 class Solution(object):
     @staticmethod
     def partition(head, x):
-        pass
+        lessValueList = []
+        moreValueList = []
+        while head != None:
+            if head.val < x:
+                lessValueList.append(head.val)
+
+            else:
+                moreValueList.append(head.val)
+
+            head = head.next
+
+        newHead = None
+        currentNode = None
+        for value in lessValueList + moreValueList:
+            if newHead == None:
+                newHead = ListNode(value)
+                currentNode = newHead
+                continue
+
+            newNode = ListNode(value)
+            currentNode.next = newNode
+            currentNode = currentNode.next
+
+        return newHead
