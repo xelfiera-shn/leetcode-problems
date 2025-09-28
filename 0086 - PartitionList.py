@@ -30,3 +30,24 @@ class Solution(object):
             currentNode = currentNode.next
 
         return newHead
+    
+# Another solution (optimized version of first solution)
+class Solution(object):
+    @staticmethod
+    def partition(head, x):
+        lessValueListHead = lessValueNode = ListNode()
+        moreValueListHead = moreValueNode = ListNode()
+        while head != None:
+            if head.val < x:
+                lessValueNode.next = head
+                lessValueNode = lessValueNode.next
+
+            else:
+                moreValueNode.next = head
+                moreValueNode = moreValueNode.next
+
+            head = head.next
+
+        moreValueNode.next = None
+        lessValueNode.next = moreValueListHead.next
+        return lessValueListHead.next
