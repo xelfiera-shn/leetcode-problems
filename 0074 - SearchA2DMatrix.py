@@ -6,4 +6,3 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        
