@@ -41,9 +41,12 @@ class Solution(object):
             if head.val == head.next.val:
                 while head and head.next and head.val == head.next.val:
                     head = head.next
+
                 head = head.next
                 previousNode.next = head
+
             else:
                 previousNode = previousNode.next
                 head = head.next
+                
         return dummyHead.next
