@@ -30,3 +30,20 @@ class Solution(object):
             currentNode = currentNode.next
 
         return head
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def deleteDuplicates(head):
+        dummyHead = previousNode = ListNode(0)
+        dummyHead.next = head
+        while head and head.next:
+            if head.val == head.next.val:
+                while head and head.next and head.val == head.next.val:
+                    head = head.next
+                head = head.next
+                previousNode.next = head
+            else:
+                previousNode = previousNode.next
+                head = head.next
+        return dummyHead.next
