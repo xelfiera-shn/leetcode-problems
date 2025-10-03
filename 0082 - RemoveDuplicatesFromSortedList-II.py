@@ -30,9 +30,3 @@ class Solution(object):
             currentNode = currentNode.next
 
         return head
-    
-# Another solution (optimized)
-class Solution(object):
-    @staticmethod
-    def deleteDuplicates(head):
-        pass
