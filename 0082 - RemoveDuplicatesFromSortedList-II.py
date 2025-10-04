@@ -31,7 +31,7 @@ class Solution(object):
 
         return head
     
-# Another solution
+# Another solution on the web
 class Solution(object):
     @staticmethod
     def deleteDuplicates(head):
