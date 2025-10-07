@@ -41,7 +41,7 @@ class Solution(object):
 
                 else: checkRowAndColumnTable[char][1].append(yIndex)
 
-                # Check grid
+                # Check 3x3 grid
                 divisionX = xIndex // 3
                 divisionY = yIndex // 3
                 if char in check3x3GridTable[(divisionY, divisionX)]: return False
