@@ -1,30 +1,8 @@
 class Solution(object):
     @staticmethod
     def isValidSudoku(board):
-        checkRowAndColumnTable = {
-            '0': [[], []],
-            '1': [[], []],
-            '2': [[], []],
-            '3': [[], []],
-            '4': [[], []],
-            '5': [[], []],
-            '6': [[], []],
-            '7': [[], []],
-            '8': [[], []],
-            '9': [[], []]
-        }
-
-        check3x3GridTable = {
-            (0, 0): [],
-            (0, 1): [],
-            (0, 2): [],
-            (1, 0): [],
-            (1, 1): [],
-            (1, 2): [],
-            (2, 0): [],
-            (2, 1): [],
-            (2, 2): []
-        }
+        checkRowAndColumnTable = [[[], []] for _ in range(9)]
+        check3x3GridTable = [[[] for _ in range(3)] for _ in range(3)]
 
         for yIndex in range(len(board)):
             for xIndex in range(len(board[yIndex])):
@@ -34,24 +12,24 @@ class Solution(object):
                     continue
 
                 # Check column
-                if xIndex in checkRowAndColumnTable[char][0]:
+                if xIndex in checkRowAndColumnTable[int(char) - 1][0]:
                     return False
                 
-                checkRowAndColumnTable[char][0].append(xIndex)
+                checkRowAndColumnTable[int(char) - 1][0].append(xIndex)
 
                 # Check row
-                if yIndex in checkRowAndColumnTable[char][1]:
+                if yIndex in checkRowAndColumnTable[int(char) - 1][1]:
                     return False
                 
-                checkRowAndColumnTable[char][1].append(yIndex)
+                checkRowAndColumnTable[int(char) - 1][1].append(yIndex)
 
                 # Check 3x3 grid
                 divisionX = xIndex // 3
                 divisionY = yIndex // 3
-                if char in check3x3GridTable[(divisionY, divisionX)]:
+                if char in check3x3GridTable[divisionY][divisionX]:
                     return False
                 
-                check3x3GridTable[(divisionY, divisionX)].append(char)
+                check3x3GridTable[divisionY][divisionX].append(char)
 
         return True
 
