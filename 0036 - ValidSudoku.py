@@ -45,25 +45,21 @@ class Solution(object):
             for xIndex in range(9):
                 char = board[yIndex][xIndex]
 
-                if char == '.':
-                    continue
+                if char == '.': continue
 
                 # Check row
-                if char in rows[yIndex]:
-                    return False
+                if char in rows[yIndex]: return False
                 
                 rows[yIndex].add(char)
 
                 # Check column
-                if char in columns[xIndex]:
-                    return False
+                if char in columns[xIndex]: return False
                 
                 columns[xIndex].add(char)
 
                 # Check 3x3 grid
                 gridIndex = (xIndex // 3) * 3 + (yIndex // 3)
-                if char in grids[gridIndex]:
-                    return False
+                if char in grids[gridIndex]: return False
                 
                 grids[gridIndex].add(char)
 
