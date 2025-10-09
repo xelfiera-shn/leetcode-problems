@@ -8,26 +8,22 @@ class Solution(object):
             for xIndex in range(len(board[yIndex])):
                 char = board[yIndex][xIndex]
 
-                if char == '.':
-                    continue
+                if char == '.': continue
 
                 # Check column
-                if xIndex in checkRowAndColumnTable[int(char) - 1][0]:
-                    return False
+                if xIndex in checkRowAndColumnTable[int(char) - 1][0]: return False
                 
                 checkRowAndColumnTable[int(char) - 1][0].append(xIndex)
 
                 # Check row
-                if yIndex in checkRowAndColumnTable[int(char) - 1][1]:
-                    return False
+                if yIndex in checkRowAndColumnTable[int(char) - 1][1]: return False
                 
                 checkRowAndColumnTable[int(char) - 1][1].append(yIndex)
 
                 # Check 3x3 grid
                 divisionX = xIndex // 3
                 divisionY = yIndex // 3
-                if char in check3x3GridTable[divisionY][divisionX]:
-                    return False
+                if char in check3x3GridTable[divisionY][divisionX]: return False
                 
                 check3x3GridTable[divisionY][divisionX].append(char)
 
