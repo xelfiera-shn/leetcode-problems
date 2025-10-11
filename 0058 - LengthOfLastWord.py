@@ -15,4 +15,19 @@ class Solution(object):
 class Solution(object):
     @staticmethod
     def lengthOfLastWord(s):
-        pass
+        s = list(s)
+        lastWord = []
+
+        isWord = False
+        for i in range(len(s)):
+            if not isWord and s[len(s) - 1 - i] == ' ':
+                continue
+
+            isWord = True
+            if s[len(s) - 1 - i] != ' ':
+                lastWord.append(s[len(s) - 1 - i])
+                continue
+
+            break
+
+        return len(lastWord)
