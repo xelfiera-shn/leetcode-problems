@@ -8,7 +8,7 @@ class Solution(object):
     @staticmethod
     def maxDepth(root):
         if root == None: return 0
-        
+
         maxDepth = [0]
         def moveForward(node, depth):
             newDepth = depth + 1
@@ -24,3 +24,13 @@ class Solution(object):
         
         moveForward(root, 0)
         return maxDepth[0]
+    
+# Another solution
+class Solution(object):
+    def maxDepth(self, root):
+        if root is None: return 0
+
+        leftDepth = self.maxDepth(root.left)
+        rightDepth = self.maxDepth(root.right)
+
+        return max(leftDepth, rightDepth) + 1
