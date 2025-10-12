@@ -7,4 +7,18 @@ class TreeNode(object):
 class Solution(object):
     @staticmethod
     def maxDepth(root):
-        pass
+        maxDepth = [0]
+        def moveForward(node, depth):
+            newDepth = depth + 1
+            if newDepth > maxDepth[0]: maxDepth[0] = newDepth
+
+            if node.left != None:
+                moveForward(node.left, newDepth)
+
+            if node.right != None:
+                moveForward(node.right, newDepth)
+
+            return
+        
+        moveForward(root, 0)
+        return maxDepth[0]
