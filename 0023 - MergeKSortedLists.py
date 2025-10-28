@@ -4,7 +4,8 @@ class ListNode(object):
         self.next = next
         
 class Solution(object):
-    def mergeKLists(self, lists):
+    @staticmethod
+    def mergeKLists(lists):
         """
         :type lists: List[Optional[ListNode]]
         :rtype: Optional[ListNode]
