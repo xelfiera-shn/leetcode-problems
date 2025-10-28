@@ -6,8 +6,4 @@ class ListNode(object):
 class Solution(object):
     @staticmethod
     def mergeKLists(lists):
-        """
-        :type lists: List[Optional[ListNode]]
-        :rtype: Optional[ListNode]
-        """
-        
+        pass
