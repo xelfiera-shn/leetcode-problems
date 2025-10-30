@@ -7,4 +7,3 @@ class Solution(object):
     @staticmethod
     def mergeKLists(lists):
         pass
-
