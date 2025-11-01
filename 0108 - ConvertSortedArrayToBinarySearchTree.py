@@ -5,7 +5,8 @@ class TreeNode(object):
         self.right = right
 
 class Solution(object):
-    def sortedArrayToBST(self, nums):
+    @staticmethod
+    def sortedArrayToBST(nums):
         """
         :type nums: List[int]
         :rtype: Optional[TreeNode]
