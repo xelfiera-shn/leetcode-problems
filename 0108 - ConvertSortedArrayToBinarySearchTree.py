@@ -7,8 +7,4 @@ class TreeNode(object):
 class Solution(object):
     @staticmethod
     def sortedArrayToBST(nums):
-        """
-        :type nums: List[int]
-        :rtype: Optional[TreeNode]
-        """
-        
+        pass
