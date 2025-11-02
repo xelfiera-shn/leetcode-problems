@@ -1,3 +1,4 @@
 class Solution(object):
-    def generate(self, numRows):
+    @staticmethod
+    def generate(numRows):
         pass
