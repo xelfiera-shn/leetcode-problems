@@ -28,3 +28,19 @@ class Solution(object):
             CalculateAndInsertNextRow()
 
         return pascalTriangle
+    
+# Another solution (Combinatorial)
+class Solution(object):
+    @staticmethod
+    def generate(numRows):
+        from math import factorial as fc
+
+        triangle = []
+        for i in range(numRows):
+            row = [0] * (i + 1)
+            for j in range(i + 1):
+                row[j] = fc(i) / fc(i - j) / fc(j)
+
+            triangle.append(row)
+
+        return triangle
