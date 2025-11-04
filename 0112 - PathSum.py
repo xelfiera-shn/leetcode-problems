@@ -3,12 +3,8 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution(object):
-    def hasPathSum(self, root, targetSum):
-        """
-        :type root: Optional[TreeNode]
-        :type targetSum: int
-        :rtype: bool
-        """
-        
+    @staticmethod
+    def hasPathSum(root, targetSum):
+        pass
