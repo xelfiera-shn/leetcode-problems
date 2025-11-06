@@ -8,3 +8,13 @@ class Solution(object):
                 return nums[i]
 
         return nums[-1]
+    
+# Another method
+class Solution(object):
+    @staticmethod
+    def singleNumber(nums):
+        result = 0
+        for num in nums:
+            result ^= num
+
+        return result
