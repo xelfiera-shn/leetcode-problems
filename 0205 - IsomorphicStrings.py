@@ -18,3 +18,22 @@ class Solution(object):
             else: return False
 
         return True
+    
+# Another solution (optimized version of first solution)
+class Solution(object):
+    @staticmethod
+    def isIsomorphic(s, t):
+        charMap = {}
+        used = set()
+        for i in range(len(s)):
+            if s[i] in charMap:
+                if charMap[s[i]] != t[i]: return False
+
+            else: 
+                if t[i] not in used:
+                    charMap[s[i]] = t[i]
+                    used.add(t[i])
+
+                else: return False
+
+        return True
