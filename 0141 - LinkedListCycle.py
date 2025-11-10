@@ -10,10 +10,21 @@ class Solution(object):
 
         memory = set()
         while head:
-            if head in memory:
-                return True
+            if head in memory: return True
             
             memory.add(head)
             head = head.next
+
+        return False
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def hasCycle(head):
+        slow = fast = head
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+
+            if slow == fast: return True
 
         return False
