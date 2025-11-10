@@ -37,3 +37,20 @@ class Solution(object):
                 else: return False
 
         return True
+    
+# Another solution (most optimized solution)
+class Solution(object):
+    @staticmethod
+    def isIsomorphic(s, t):
+        if len(set(s)) != len(set(t)):
+            return False
+
+        charMap = {}
+        for i in range(len(s)):
+            if s[i] in charMap:
+                if charMap[s[i]] != t[i]: return False
+
+            else:
+                charMap[s[i]] = t[i]
+
+        return True
