@@ -1,3 +1,4 @@
 class Solution(object):
-    def getRow(self, rowIndex):
+    @staticmethod
+    def getRow(rowIndex):
         pass
