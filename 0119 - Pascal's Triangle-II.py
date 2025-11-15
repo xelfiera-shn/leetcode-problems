@@ -1,12 +1,21 @@
+# Solution with math.factorial
 from math import factorial as fc
 class Solution(object):
     @staticmethod
     def getRow(rowIndex):
-        if rowIndex == 0: return [1]
-        
-        row = [1]
-        for index in range(1, rowIndex):
+        row = []
+        for index in range(rowIndex + 1):
             row.append(fc(rowIndex) / (fc(rowIndex - index) * fc(index)))
 
-        row.append(1)
+        return row
+
+# Another solution with math.comb
+from math import comb
+class Solution(object):
+    @staticmethod
+    def getRow(rowIndex):
+        row = []
+        for index in range(rowIndex + 1):
+            row.append(comb(rowIndex, index))
+
         return row
