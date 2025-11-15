@@ -19,3 +19,4 @@ class Solution(object):
             row.append(comb(rowIndex, index))
 
         return row
+    
