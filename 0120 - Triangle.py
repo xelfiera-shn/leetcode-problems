@@ -14,3 +14,9 @@ class Solution(object):
 
         goForward(0, 0, triangle[0][0])
         return min(sums)
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def minimumTotal(triangle):
+        pass
