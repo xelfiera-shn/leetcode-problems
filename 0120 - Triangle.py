@@ -34,3 +34,14 @@ class Solution(object):
                     triangle[y][x] = triangle[y - 1][x - 1] + triangle[y][x]
 
         return min(triangle[-1])
+    
+# Another solution
+class Solution(object):
+    @staticmethod
+    def minimumTotal(triangle):
+        dp = triangle[-1][ : ] # Copy of orjinal triangle's last row
+        for y in range(len(triangle) - 2, -1, -1):
+            for x in range(len(triangle[y])):
+                dp[x] = triangle[y][x] + min(dp[x], dp[x + 1])
+
+        return dp[0]
