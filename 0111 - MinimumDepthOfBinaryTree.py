@@ -10,7 +10,7 @@ class Solution(object):
         if not root: return 0
 
         minDepth = [None]
-        
+
         def backtrack(node, depth):
             localDepth = depth + 1
             if node.left or node.right:
@@ -28,3 +28,11 @@ class Solution(object):
 
         backtrack(root, 0)
         return minDepth[0]
+    
+# Another solution
+class Solution(object):
+    def minDepth(self, root):
+        if not root: return 0
+
+        d = map(self.minDepth, (root.left, root.right))
+        return 1 + (min(d) or max(d))
