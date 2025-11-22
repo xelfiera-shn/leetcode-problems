@@ -7,4 +7,24 @@ class TreeNode(object):
 class Solution(object):
     @staticmethod
     def minDepth(root):
-        pass
+        if not root: return 0
+
+        minDepth = [None]
+        
+        def backtrack(node, depth):
+            localDepth = depth + 1
+            if node.left or node.right:
+                if node.left:
+                    backtrack(node.left, localDepth)
+
+                if node.right:
+                    backtrack(node.right, localDepth)
+
+            else:
+                if not minDepth[0]:
+                    minDepth[0] = localDepth
+                else:
+                    if localDepth < minDepth[0]: minDepth[0] = localDepth
+
+        backtrack(root, 0)
+        return minDepth[0]
