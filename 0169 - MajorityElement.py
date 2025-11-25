@@ -1,3 +1,4 @@
 class Solution(object):
-    def majorityElement(self, nums):
+    @staticmethod
+    def majorityElement(nums):
         pass
